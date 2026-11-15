@@ -1,0 +1,176 @@
+<title>Haress Contact</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: one narrow phone-first column (people arrive by scanning the QR on the box):
+   brand header, contact card, social links, store, free-installation steps, short FAQ. */
+:root{
+  --bg:#F3F4F7; --surface:#FFFFFF; --fg:#12263F; --muted:#56657A; --line:#DDE1E8;
+  --navy:#12263F; --gold:#B8862B; --gold-soft:#F3E7CC; --on-navy:#FFFFFF; --focus:#B8862B;
+  --font-display:'Cinzel',Georgia,serif; --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1A2C; --surface:#152640; --fg:#EEF1F6; --muted:#A5B2C5; --line:#26395A;
+    --navy:#EEF1F6; --gold:#D9AC55; --gold-soft:#2B3550; --on-navy:#0D1A2C; --focus:#D9AC55; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1A2C; --surface:#152640; --fg:#EEF1F6; --muted:#A5B2C5; --line:#26395A;
+  --navy:#EEF1F6; --gold:#D9AC55; --gold-soft:#2B3550; --on-navy:#0D1A2C; --focus:#D9AC55; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.55;
+  padding-block:0 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+
+.sample{margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:8px 16px;background:var(--gold-soft);color:var(--fg);font-size:13px;text-align:center}
+header{display:flex;flex-direction:column;align-items:center;gap:10px;padding-top:32px;text-align:center}
+.mark{width:84px;height:auto}
+.name{font-family:var(--font-display);font-weight:700;font-size:40px;letter-spacing:.16em;padding-left:.16em;line-height:1;color:var(--fg);margin:0}
+.rule{width:56px;height:3px;background:var(--gold);border-radius:2px}
+.slogan{margin:0;color:var(--muted);font-size:15px;text-wrap:balance}
+.ar{font-size:15px;color:var(--muted)}
+
+section{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px}
+h2{margin:0;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.row > .grow{flex:1 1 200px;min-width:0}
+.label{font-size:13px;color:var(--muted);margin:0}
+.value{font-size:20px;font-weight:600;margin:0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+button,.btn{font:inherit;font-weight:600;font-size:15px;min-height:44px;padding:0 18px;border-radius:10px;border:1.5px solid var(--navy);background:transparent;color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.btn.primary{background:var(--navy);color:var(--on-navy)}
+button:hover,.btn:hover{background:var(--gold-soft)}
+.btn.primary:hover{background:var(--navy);opacity:.9}
+hr{border:0;border-top:1px solid var(--line);width:100%;margin:0}
+
+.social{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.social a{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;min-height:44px}
+.social a:hover{border-color:var(--gold)}
+.social b{font-size:15px}
+.social span{font-size:14px;color:var(--muted);overflow-wrap:anywhere}
+
+ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+ol li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+ol li::before{content:counter(s);flex:0 0 30px;height:30px;border-radius:50%;background:var(--navy);color:var(--on-navy);font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+ol p{margin:0}
+ol small{display:block;color:var(--muted);font-size:14px}
+
+details{border-top:1px solid var(--line);padding-top:12px}
+details:first-of-type{border-top:0;padding-top:0}
+summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center}
+details p{margin:0 0 8px;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:13px}
+.toast{min-height:20px;font-size:13px;color:var(--gold);margin:0}
+</style>
+
+<div class="sample">Sample page: the numbers, handles and links below are placeholders until the real ones are added.</div>
+<div class="wrap">
+<header>
+  <svg class="mark" viewBox="30 0 150 300" role="img" aria-label="Haress guard with spear and shield" xmlns="http://www.w3.org/2000/svg">
+    <rect x="40" y="288" width="140" height="6" rx="3" fill="#B8862B"/>
+    <rect x="152" y="26" width="5" height="266" rx="2.5" fill="#B8862B"/>
+    <polygon points="154.5,4 143,40 166,40" fill="#B8862B"/>
+    <rect x="88" y="214" width="17" height="70" rx="5" fill="currentColor"/>
+    <rect x="111" y="214" width="17" height="70" rx="5" fill="currentColor"/>
+    <rect x="84" y="276" width="24" height="12" rx="5" fill="currentColor"/>
+    <rect x="108" y="276" width="24" height="12" rx="5" fill="currentColor"/>
+    <path d="M78 96 H138 L146 160 L150 222 H66 L70 160 Z" fill="currentColor"/>
+    <rect x="68" y="168" width="80" height="9" fill="#B8862B"/>
+    <path d="M132 104 L154 142" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="155" cy="144" r="9" fill="#B8862B"/>
+    <circle cx="108" cy="72" r="19" fill="#E9C9A0"/>
+    <path d="M86 72 A22 22 0 0 1 130 72 V78 H86 Z" fill="currentColor"/>
+    <rect x="105" y="72" width="6" height="22" rx="2" fill="currentColor"/>
+    <path d="M108 54 C96 34 120 26 128 40 C121 39 116 44 114 54 Z" fill="#B8862B"/>
+    <rect x="101" y="86" width="14" height="14" fill="#E9C9A0"/>
+    <path d="M40 112 H100 V166 Q100 204 70 224 Q40 204 40 166 Z" fill="#B8862B" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M48 120 H92 V166 Q92 197 70 214 Q48 197 48 166 Z" fill="currentColor"/>
+    <circle cx="70" cy="158" r="9" fill="#B8862B"/>
+    <path d="M66 162 H74 L77 182 H63 Z" fill="#B8862B"/>
+  </svg>
+  <h1 class="name">HARESS</h1>
+  <div class="rule"></div>
+  <p class="slogan">Wherever you are, your order is received safely!</p>
+</header>
+
+<section aria-labelledby="h-contact">
+  <h2 id="h-contact">Talk to us</h2>
+  <div class="row">
+    <div class="grow"><p class="label">Phone and WhatsApp</p><p class="value" id="phone">+20 10X XXX XXXX</p></div>
+    <button type="button" data-copy="phone">Copy number</button>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="grow"><p class="label">Email</p><p class="value" id="mail" style="font-size:17px">hello@haress.example</p></div>
+    <button type="button" data-copy="mail">Copy email</button>
+  </div>
+  <hr>
+  <div>
+    <p class="label">Working hours</p>
+    <p class="value" style="font-size:17px">Every day, 9 AM to 10 PM</p>
+  </div>
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
+</section>
+
+<section aria-labelledby="h-social">
+  <h2 id="h-social">Follow Haress</h2>
+  <div class="social">
+    <a href="#" rel="noopener"><b>Facebook</b><span>facebook.com/haress.eg</span></a>
+    <a href="#" rel="noopener"><b>Instagram</b><span>@haress.eg</span></a>
+    <a href="#" rel="noopener"><b>TikTok</b><span>@haress.eg</span></a>
+    <a href="#" rel="noopener"><b>WhatsApp</b><span>+20 10X XXX XXXX</span></a>
+  </div>
+</section>
+
+<section aria-labelledby="h-store">
+  <h2 id="h-store">Order your Haress box</h2>
+  <p style="margin:0">Two versions: a key lock, or a digital keypad lock. Pick the color and finish that match your home.</p>
+  <div class="row"><a class="btn primary" href="#">Visit the online store</a></div>
+</section>
+
+<section aria-labelledby="h-steps">
+  <h2 id="h-steps">Free installation, step by step</h2>
+  <ol>
+    <li><p><b>Order online</b><small>Choose the lock type, color and finish.</small></p></li>
+    <li><p><b>We call you</b><small>We confirm your address and a time that suits you.</small></p></li>
+    <li><p><b>Our team installs it</b><small>We fix the box to the wall by your door. No charge.</small></p></li>
+    <li><p><b>Receive safely</b><small>The courier locks your order inside. Only you can open it.</small></p></li>
+  </ol>
+</section>
+
+<section aria-labelledby="h-faq">
+  <h2 id="h-faq">Quick answers</h2>
+  <details><summary>How do I open the box?</summary><p>With your key, or with your private code on the digital version.</p></details>
+  <details><summary>Will a large order fit?</summary><p>Large orders may not fit inside. For those, ask the courier to call you.</p></details>
+  <details><summary>Does my compound need to approve it?</summary><p>Some compounds ask for management approval before installation. Tell us when you order and we will guide you.</p></details>
+  <details><summary>Which areas do you cover?</summary><p>Compounds in New Cairo and the Fifth Settlement, such as Mivida, Hyde Park and Lake View.</p></details>
+</section>
+
+<footer>Haress. Your orders, guarded.</footer>
+</div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'),t;
+  function say(m){toast.textContent=m;clearTimeout(t);t=setTimeout(function(){toast.textContent='';},2500);}
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.getAttribute('data-copy')),txt=el.textContent.trim();
+      function fallback(){
+        var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+        say('Selected. Press copy on your keyboard.');
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(function(){say('Copied');},fallback);
+      }else{fallback();}
+    });
+  });
+  document.querySelectorAll('a[href="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();say('Sample link: the real link will be added here.');});
+  });
+})();
+</script>
